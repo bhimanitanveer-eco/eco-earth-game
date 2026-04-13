@@ -45,7 +45,9 @@ button{border:none;border-radius:999px;padding:12px 18px;font-size:16px;font-wei
 <div class="hero"><h1>🌍 Eco Blockbuster: Mystery Word</h1><p class="sub">Flip a card, reveal the item, and drag it into the right bin. If your team sorts it correctly, they earn that card’s letter. First team to figure out the mystery word wins!</p></div>
 <div class="topbar">
 <div class="panel"><h2 style="margin-top:0;">Teams</h2><div class="teams" id="teams"></div><div class="controls"><button class="secondary" onclick="switchTeam()">➡️ Next Team</button><button class="secondary" onclick="setTeams(2)">2 Teams</button><button class="secondary" onclick="setTeams(3)">3 Teams</button><button class="secondary" onclick="setTeams(4)">4 Teams</button><button class="primary" onclick="resetGame()">🔄 New Game</button></div></div>
-<div class="panel"><h2 style="margin-top:0;">Mystery Word</h2><div class="mystery-grid" id="mysteryGrid"></div><div class="riddle"><div class="riddle-title">🧩 Riddle Clue</div><div class="small" style="font-size:16px;">I am your home.<br>You walk on me every day.<br>You must protect me by reducing waste.<br>What am I?</div></div><div class="controls"><button class="purple" onclick="openGuessOverlay()">❓ Guess the Word</button></div><div class="small" style="margin-top:8px;text-align:center;"><strong>Current team:</strong> <span id="currentTeamLabel"></span></div><div class="small" style="margin-top:6px;text-align:center;"><strong>Cards left:</strong> <span id="cardsLeft"></span></div></div>
+<div class="panel"><h2 style="margin-top:0;">Mystery Word</h2><div class="mystery-grid" id="mysteryGrid"></div><div class="riddle"><div class="riddle-title">🧩 Riddle Clue</div><div class="small" style="font-size:16px;">I help protect the Earth.<br>
+I reduce waste and take care of Allah’s creation.<br>
+What should we be?</div></div><div class="controls"><button class="purple" onclick="openGuessOverlay()">❓ Guess the Word</button></div><div class="small" style="margin-top:8px;text-align:center;"><strong>Current team:</strong> <span id="currentTeamLabel"></span></div><div class="small" style="margin-top:6px;text-align:center;"><strong>Cards left:</strong> <span id="cardsLeft"></span></div></div>
 </div>
 <div class="game">
 <div class="panel"><h2 style="margin-top:0;">Letter Cards</h2><div class="cards-grid" id="cards"></div></div>
@@ -58,7 +60,7 @@ button{border:none;border-radius:999px;padding:12px 18px;font-size:16px;font-wei
 <div class="guessOverlay" id="guessOverlay"><div class="guess-card"><h2>❓ Guess the Mystery Word</h2><p>If your team guesses correctly, you win right away. If you guess wrong, your team loses its next turn.</p><div class="guess-row"><input id="guessInput" class="guess-input" type="text" maxlength="12" placeholder="Type your guess" /></div><div class="controls"><button class="purple" onclick="submitGuess()">Submit Guess</button><button class="secondary" onclick="closeGuessOverlay()">Cancel</button></div></div></div>
 <div class="winner" id="winnerOverlay"><div class="winner-card"><div class="big">🏆</div><h2 id="winnerTitle">Team 1 Wins!</h2><div class="small" id="winnerReason" style="font-size:18px;color:#3a4d41;margin-bottom:16px;">They guessed the mystery word!</div><button class="pink" onclick="closeWinner()">Play Again</button></div></div>
 <script>
-const SECRET_WORD="EARTH";
+const SECRET_WORD="BE GREEN";
 const LETTERS=SECRET_WORD.split("");
 const allItems=[
 
