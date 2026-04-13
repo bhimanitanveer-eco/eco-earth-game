@@ -60,7 +60,7 @@ What should we be?</div></div><div class="controls"><button class="purple" oncli
 <div class="guessOverlay" id="guessOverlay"><div class="guess-card"><h2>❓ Guess the Mystery Word</h2><p>If your team guesses correctly, you win right away. If you guess wrong, your team loses its next turn.</p><div class="guess-row"><input id="guessInput" class="guess-input" type="text" maxlength="12" placeholder="Type your guess" /></div><div class="controls"><button class="purple" onclick="submitGuess()">Submit Guess</button><button class="secondary" onclick="closeGuessOverlay()">Cancel</button></div></div></div>
 <div class="winner" id="winnerOverlay"><div class="winner-card"><div class="big">🏆</div><h2 id="winnerTitle">Team 1 Wins!</h2><div class="small" id="winnerReason" style="font-size:18px;color:#3a4d41;margin-bottom:16px;">They guessed the mystery word!</div><button class="pink" onclick="closeWinner()">Play Again</button></div></div>
 <script>
-const SECRET_WORD="BE GREEN";
+const SECRET_WORD="BEGREEN";
 const LETTERS=SECRET_WORD.split("");
 const allItems=[
 
