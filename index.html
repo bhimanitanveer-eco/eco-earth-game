@@ -357,12 +357,17 @@ button{
 
 <script>
 const SECRET_WORD="BEGREEN";
-  const correctSound = new Audio("images/correct.mp3");
-const wrongSound = new Audio("images/wrong.mp3");
+  const correctSound = new Audio("./images/correct.mp3");
+const wrongSound = new Audio("./images/wrong.mp3");
 
 // keep it soft
 correctSound.volume = 0.3;
 wrongSound.volume = 0.2;
+
+function playSoft(sound){
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+}
 const LETTERS=SECRET_WORD.split("");
 const REVEAL_PHRASE="Be Green, It's Deen!";
 const allItems=[
@@ -524,7 +529,7 @@ function showWinner(team,reasonText){
   document.getElementById("winnerTitle").textContent=team.name+" Wins!";
   document.getElementById("winnerReason").textContent=reasonText;
   document.getElementById("winnerOverlay").classList.add("show");
-  correctSound.play();
+  playSoft(correctSound);
   launchConfetti();
   setTimeout(launchConfetti,400);
 }
@@ -553,7 +558,7 @@ function submitGuess(){
   }else{
     team.skipTurn=true;
     setMessage("😬 Not quite! "+team.name+" will miss its next turn.");
-    wrongSound.play();
+    playSoft(wrongSound);
     showGreyout();
     advanceToNextEligibleTeam();
     setTimeout(()=>{if(!winnerLocked)setMessage(teams[currentTeam].name+", it is your turn!")},220);
