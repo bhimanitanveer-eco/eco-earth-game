@@ -317,18 +317,30 @@ function shuffleArray(arr){
 }
 
 function buildCards(){
-  const letters=[...LETTERS];
-  const remaining=allItems.length-letters.length;
+  const letters = [];
 
-  for(let i=0;i<remaining;i++){
-    const randomDecoy=DECOY_LETTERS[Math.floor(Math.random()*DECOY_LETTERS.length)];
+  for(let t = 0; t < teamCount; t++){
+    for(const letter of LETTERS){
+      letters.push(letter);
+    }
+  }
+
+  while(letters.length < allItems.length){
+    const randomDecoy = DECOY_LETTERS[Math.floor(Math.random() * DECOY_LETTERS.length)];
     letters.push(randomDecoy);
   }
 
   shuffleArray(letters);
 
-  cards=shuffleArray(allItems.map((item,i)=>({...item,letter:letters[i],flipped:false,placed:false,number:i+1})));
-  cards.forEach((c,i)=>c.number=i+1);
+  cards = shuffleArray(allItems.map((item, i) => ({
+    ...item,
+    letter: letters[i],
+    flipped: false,
+    placed: false,
+    number: i + 1
+  })));
+
+  cards.forEach((c, i) => c.number = i + 1);
 }
 
 function buildTeams(){
